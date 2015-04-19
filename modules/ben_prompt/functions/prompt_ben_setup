@@ -1,0 +1,63 @@
+#
+# A prompt backed by http://github.com/roguePanda/prompt
+#
+# Authors:
+#    Ben Navetta <ben.navetta@gmail.com>
+#
+# Features
+#    - Fast backend written in Rust
+#    - Displays VCS status and branch in right prompt
+#    - Prompt character changes color to indicate command exit status
+#
+# Usage
+#    In ~/.zpreztorc:
+#      zstyle ':prezto:module:prompt' theme 'ben'
+
+# Load dependencies
+pmodload 'helper'
+
+function prompt_ben_precmd {
+	setopt LOCAL_OPTIONS
+	unsetopt XTRACE KSH_ARRAYS
+
+	# Based on pure.zsh
+	local stop=$EPOCHSECONDS
+	local start=${cmd_timestamp:-$stop}
+	local elapsed=$(($stop-$start))
+
+	local preprompt="$(prompt_ben precmd --exec-time=${elapsed})"
+	print -P $preprompt
+
+	# in case preexec isn't triggered
+	unset cmd_timestamp
+}
+
+function prompt_ben_preexec {
+	cmd_timestamp=$EPOCHSECONDS
+	# echo "Preexec triggered"
+}
+
+function prompt_ben_preview {
+	prompt_preview_theme 'ben'
+}
+
+function prompt_ben_setup {
+	# Prevent percent sign from showing up if prompt doesn't end with newline
+	export PROMPT_EOL_MARK=''
+
+	setopt LOCAL_OPTIONS
+	unsetopt XTRACE KSH_ARRAYS
+	prompt_opts=(cr percent subst)
+
+	# Load required functions.
+	autoload -Uz add-zsh-hook
+
+	# Needed for execution timing
+	zmodload zsh/datetime
+
+	add-zsh-hook precmd prompt_ben_precmd
+	add-zsh-hook preexec prompt_ben_preexec
+
+	PROMPT='$(prompt_ben prompt --exit=$?)'
+	RPROMPT='$(prompt_ben rprompt)'
+}
