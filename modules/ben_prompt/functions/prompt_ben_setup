@@ -61,3 +61,5 @@ function prompt_ben_setup {
 	PROMPT='$(prompt_ben prompt --exit=$?)'
 	RPROMPT='$(prompt_ben rprompt)'
 }
+
+prompt_ben_setup "$@"
