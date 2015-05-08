@@ -32,12 +32,17 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'base16' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'homebrew' \
+  'fasd' \
   'osx' \
+  'homebrew' \
   'git' \
   'tmux' \
+  'haskell' \
+  'python' \
+  'archive' \
   'ben_prompt' \
   'prompt'
 
@@ -49,7 +54,10 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+# Indicate when the editor is completing
+zstyle ':prezto:module:editor:info:completing' format '...'
 
 #
 # Git
@@ -93,18 +101,23 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_ecdsa' 'id_ed25519'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
+
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
 #   'builtin' 'bg=blue' \
 #   'command' 'bg=blue' \
 #   'function' 'bg=blue'
+
+#
+# Base16
+#
+zstyle ':prezto:module:base16' scheme 'londontube.dark'
 
 #
 # Terminal
