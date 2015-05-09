@@ -144,3 +144,8 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+#
+# Aliases
+#
+alias fuck='$(thefuck $(fc -ln -1))'
