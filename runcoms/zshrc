@@ -28,3 +28,5 @@ function update_spacemacs() {
      git submodule sync; git submodule update
      popd
 }
+
+if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
