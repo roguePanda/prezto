@@ -57,7 +57,9 @@ export GOPATH="$HOME/src/gocode"
 #
 
 # Link apps into /Applications, not ~/Applications
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Save options to set in zshrc since Boxen's cask environment script doesn't respect existing options
+export MY_HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_CASK_OPTS="$MY_HOMEBREW_CASK_OPTS"
 
 #
 # Less
