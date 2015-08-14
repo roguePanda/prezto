@@ -29,6 +29,20 @@ function update_spacemacs() {
      popd
 }
 
+function gradle() {
+	# http://unix.stackexchange.com/questions/13464/is-there-a-way-to-find-a-file-in-an-inverse-recursive-search
+	function upsearch() {
+		test / = "$PWD" && return || test -e "$1" && echo "$PWD/$1" && return || cd .. && upsearch "$1"
+	}
+
+	local gradlew="$(upsearch gradlew)"
+	if [ -z "$gradlew" ]; then
+		echo "could not find gradlew" >&2
+	else
+		"$gradlew" "$@"
+	fi
+}
+
 # Workaround for Boxen's Cask environment script
 export HOMEBREW_CASK_OPTS="$MY_HOMEBREW_CASK_OPTS $HOMEBREW_CASK_OPTS"
 
