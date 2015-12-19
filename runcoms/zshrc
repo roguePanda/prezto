@@ -37,7 +37,7 @@ function gradle() {
 
 	local gradlew="$(upsearch gradlew)"
 	if [ -z "$gradlew" ]; then
-		echo "could not find gradlew" >&2
+		command gradle "$@"
 	else
 		"$gradlew" "$@"
 	fi
