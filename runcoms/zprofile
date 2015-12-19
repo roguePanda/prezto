@@ -47,6 +47,7 @@ path=(
   $HOME/bin
   /usr/texbin
   $HOME/anaconda/bin
+  $HOME/miniconda/bin
   $path
 )
 

@@ -44,6 +44,7 @@ zstyle ':prezto:load' pmodule \
   'haskell' \
   'python' \
   'archive' \
+  'swiftenv' \
   'ben_prompt' \
   'prompt'
 
