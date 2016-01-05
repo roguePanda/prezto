@@ -150,5 +150,5 @@ zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 #
 # Aliases
 #
-alias fuck='$(thefuck $(fc -ln -1))'
+eval "$(thefuck --alias)"
 alias gdf='git icdiff'
