@@ -45,6 +45,7 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   $HOME/bin
+  $HOME/.cargo/bin
   /usr/texbin
   $HOME/anaconda/bin
   $HOME/miniconda/bin
@@ -53,6 +54,11 @@ path=(
 
 # Set the Go project source path
 export GOPATH="$HOME/src/gocode"
+
+#
+# Rust
+#
+export RUST_SRC_PATH="$HOME/src/other/rust/src"
 
 #
 # Homebrew Cask
