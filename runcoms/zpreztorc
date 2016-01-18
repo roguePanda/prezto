@@ -152,3 +152,4 @@ zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 #
 eval "$(thefuck --alias)"
 alias gdf='git icdiff'
+alias caskz='cask zap'
