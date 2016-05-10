@@ -97,7 +97,11 @@ zstyle ':prezto:module:editor:info:completing' format '...'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'ben'
+if (( $+commands[promt_ben] )); then
+  zstyle ':prezto:module:prompt' theme 'ben'
+else
+  zstyle ':prezto:module:prompt' theme 'pure'
+fi
 
 #
 # SSH
