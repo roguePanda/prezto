@@ -42,6 +42,7 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'git' \
   'tmux' \
+  'ssh' \
   'haskell' \
   'python' \
   'archive' \
