@@ -46,6 +46,6 @@ function gradle() {
 # Workaround for Boxen's Cask environment script
 export HOMEBREW_CASK_OPTS="$MY_HOMEBREW_CASK_OPTS $HOMEBREW_CASK_OPTS"
 
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+if (( $+commands[brew] && brew command command-not-found-init > /dev/null )); then eval "$(brew command-not-found-init)"; fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

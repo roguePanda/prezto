@@ -160,6 +160,6 @@ zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 #
 # Aliases
 #
-eval "$(thefuck --alias)"
+(( $+commands[thefuck] )) && eval "$(thefuck --alias)"
 alias gdf='git icdiff'
 alias caskz='cask zap'

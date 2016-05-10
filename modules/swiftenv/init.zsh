@@ -5,6 +5,11 @@
 #    Ben Navetta <ben.navetta@gmail.com>
 #
 
+# Return if requirements are not found
+if (( ! $+commands[swiftenv] )); then
+	return 1
+fi
+
 export SWIFTENV_ROOT=/usr/local/var/swiftenv
 path=("$SWIFTENV_ROOT/bin" $path)
 eval "$(swiftenv init -)"
