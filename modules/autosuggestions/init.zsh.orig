@@ -1,4 +1,20 @@
 #
+<<<<<<< HEAD
+# Integrates zsh-autosuggestions into Prezto
+# Must be loaded after syntax-highlighting
+#
+# Authors:
+#     Ben Navetta <ben.navetta@gmail.com>
+#
+
+source "${0:h}/external/autosuggestions.zsh" || return 1
+
+function autosuggest_init() {
+    zle autosuggest-start
+}
+
+zle -N autosuggest_init
+=======
 # Integrates zsh-autosuggestions into Prezto.
 #
 # Authors:
@@ -33,3 +49,4 @@ if [[ -n "$key_info" ]]; then
   bindkey -M viins "$key_info[Control]F" vi-forward-word
   bindkey -M viins "$key_info[Control]E" vi-add-eol
 fi
+>>>>>>> 4f19700919c8ebbaf75755fc0d03716d13183f49
