@@ -3,7 +3,12 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Ben Navetta <ben.navetta@gmail.com>
 #
+
+if [ -f "$HOME/.zprofile.secret" ]; then
+	source "$HOME/.zprofile.secret"
+fi
 
 #
 # Browser
@@ -17,7 +22,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
+# export EDITOR='nano'
+export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
@@ -47,6 +53,7 @@ path=(
   $HOME/bin
   $HOME/.cargo/bin
   /usr/texbin
+  $HOME/anaconda3/bin
   $HOME/anaconda/bin
   $HOME/miniconda/bin
   $path
