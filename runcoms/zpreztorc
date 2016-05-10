@@ -38,6 +38,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'fasd' \
   'osx' \
+  'command-not-found' \
   'homebrew' \
   'git' \
   'tmux' \
